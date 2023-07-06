@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace CoffeeShop
 {
-    internal class Item
+    public class Item
     {
+        public string Name { get; set; }
+        public int PriceInCents { get; set; }
+
+
+        public Item (string name , int priceInCents)
+        {
+            Name = name;
+            PriceInCents = priceInCents;
+        }
+
+        public double PriceInDollars()
+        {
+            return (double)PriceInCents / 100;
+        }
     }
+    
 }

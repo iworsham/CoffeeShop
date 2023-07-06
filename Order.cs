@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace CoffeeShop
 {
-    internal class Order
+    public class Order
     {
+        public List<Item> Items { get; set; }
+
+        public Order()
+        {
+            Items = new List<Item>();
+        }
+
+        public double Total()
+        {
+            double total = 0;
+            foreach (var item in Items)
+            {
+                total += item.PriceInDollars();
+            }
+            return total;
+        }
     }
 }
